@@ -8,3 +8,6 @@
     - You can see what to learn in the 'step_by_step' directory.
         ! Each step doesn't have all stuff to build the project.
         ! There are some new that I learnt.
+    - It's using SPDLOG
+        - https://github.com/gabime/spdlog
+    
