@@ -5,8 +5,6 @@
     - https://learnopengl.com/
 
 ##NOTE
-    - You can see what to learn in the 'step_by_step' directory.
-        ! Each step may not have all stuff to build the project.
     - It's using SPDLOG
         - https://github.com/gabime/spdlog
 
