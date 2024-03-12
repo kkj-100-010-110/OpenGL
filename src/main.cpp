@@ -1,3 +1,5 @@
+#include "context.h"
+
 #include <spdlog/spdlog.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -62,6 +64,13 @@ int main(int argc, char* argv[])
     }
     auto glVersion = (char*)glGetString(GL_VERSION);
 
+    auto context = Context::Create();
+    if (!context) {
+        SPDLOG_ERROR("error: failed to create context");
+        glfwTerminate();
+        return -1;
+    }
+
     OnFramebufferSizeChange(window, WINDOW_WIDTH, WINDOW_HEIGHT);
     // glfw에게 프레임 버퍼 사이즈 변경 시 현재 컨텍스트에서 'OnFramebufferSizeChange' 콜백 요청
     glfwSetFramebufferSizeCallback(window, OnFramebufferSizeChange);
@@ -73,10 +82,10 @@ int main(int argc, char* argv[])
     SPDLOG_INFO("Start main loop");
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
-        glClearColor(0.0f, 0.1f, 0.2f, 0.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        context->Render();
         glfwSwapBuffers(window);
     }
+    context.reset(); // or context = nullptr;
 
     glfwTerminate();
     return 0;
