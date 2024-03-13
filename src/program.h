@@ -5,7 +5,7 @@
  * @author GYEONG JU KIM
  * @brief pipeline program linked by shaders(vs, fs)
  * @version 0.1
- * @date
+ * @date 2024-03-13
  * 
  * @copyright Copyright (c) 2024
  * 
@@ -22,6 +22,7 @@ public:
 
     ~Program();
     uint32_t Get() const { return m_program; }
+    void Use() const;
 
 private:
     Program() {}
