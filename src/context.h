@@ -16,6 +16,8 @@
 #include "shader.h"
 #include "buffer.h"
 #include "vertex_layout.h"
+#include "image.h"
+#include "texture.h"
 
 CLASS_PTR(Context)
 class Context {
@@ -30,6 +32,8 @@ class Context {
     VertexLayoutUPtr m_vertexLayout;
     BufferUPtr m_vertexBuffer;
     BufferUPtr m_indexBuffer;
+    TextureUPtr m_texture;
+    TextureUPtr m_texture2;
 };
 
 #endif // __CONTEXT_H__
