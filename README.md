@@ -1,10 +1,10 @@
 # OpenGL
 
-##OpenGL
+## OpenGL
     - https://github.com/rinthel/opengl_course(KOR)
     - https://learnopengl.com/
 
-##NOTE
+## NOTE
     - It's using SPDLOG
         - https://github.com/gabime/spdlog
 
